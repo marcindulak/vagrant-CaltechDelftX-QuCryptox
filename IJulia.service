@@ -1,0 +1,10 @@
+[Unit]
+Description=IJulia
+After=syslog.target network.target
+
+[Service]
+Restart=always
+ExecStart=/bin/sh -c 'export HOME=/root&& julia -e "using IJulia; notebook()"'
+
+[Install]
+WantedBy=multi-user.target
