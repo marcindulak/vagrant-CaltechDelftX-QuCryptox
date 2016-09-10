@@ -4,12 +4,20 @@ Description
 
 Setup local jupyter/julia environment for the course https://courses.edx.org/courses/course-v1:CaltechDelftX+QuCryptox+3T2016
 
+**warning**: September 2016 - avoid Vagrant 1.8.5 as it has serious issues!
+The newest VirtualBox version supported by Vagrant 1.8.4 is VirtualBox 5.0.
+
+Tested on:
+
+- Ubuntu 14.04 x86_64, VirtualBox 4.3.40r110317, Vagrant 1.8.4
+- Ubuntu 16.04 x86_64, VirtualBox 5.0.26r108824, Vagrant 1.8.4
+
 
 ------------
 Sample Usage
 ------------
 
-Install VirtualBox https://www.virtualbox.org/ and Vagrant https://www.vagrantup.com/downloads.html
+Install (see the **Warning** above) VirtualBox https://www.virtualbox.org/ and Vagrant https://www.vagrantup.com/downloads.html
 
 If you have *git* installed on your host machine (e.g. laptop) clone the repository:
 
