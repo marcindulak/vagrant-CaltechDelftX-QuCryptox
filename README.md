@@ -61,4 +61,3 @@ BSD 2-clause
 Problems
 --------
 
-1. Interact slider not appearing, see similar issue https://github.com/JuliaLang/Interact.jl/issues/91

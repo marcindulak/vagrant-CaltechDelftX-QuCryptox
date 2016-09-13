@@ -9,3 +9,5 @@ yum -y install gcc-c++
 julia -e 'Pkg.add("IJulia")'
 PYTHON='' julia -e 'Pkg.add("PyPlot")'
 julia -e 'Pkg.add("Interact")'
+# pywidgets 5 require Interact master branch https://github.com/JuliaLang/Interact.jl/issues/91
+julia -e 'Pkg.checkout("Interact")'
