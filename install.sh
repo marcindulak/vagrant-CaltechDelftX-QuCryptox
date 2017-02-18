@@ -6,6 +6,8 @@ wget -q https://copr.fedorainfracloud.org/coprs/nalimilan/julia/repo/epel-7/nali
 yum -y install julia
 # c++ needed by ZMQ build
 yum -y install gcc-c++
+yum -y install czmq
+julia -e 'Pkg.add("ZMQ")'
 julia -e 'Pkg.add("IJulia")'
 PYTHON='' julia -e 'Pkg.add("PyPlot")'
 julia -e 'Pkg.add("Interact")'
