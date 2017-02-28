@@ -30,6 +30,9 @@ Start the VM guest from the command prompt:
         $ vagrant up
 
 Jypyter should be available from a web browser on your host under http://localhost:8890
+Accessing Jupyter for the first time requires a token, available from:
+
+	$ vagrant ssh -c "sudo su - -c '/root/.julia/v0.5/Conda/deps/usr/bin/jupyter notebook list'"
 
 If you have ssh access to the VM guest (by default on Linux and MAC) you can verify IJulia is running on the VM guest with:
 
