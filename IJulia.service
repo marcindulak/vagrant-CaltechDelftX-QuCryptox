@@ -6,7 +6,10 @@ After=syslog.target network.target
 Restart=always
 User=vagrant
 Group=vagrant
-ExecStart=/bin/sh -c 'export HOME=/home/vagrant&& julia -e "using IJulia; notebook()"'
+# start jupyter notebook server
+ExecStart=/bin/sh -c 'export HOME=/home/vagrant&& /home/vagrant/.julia/*/Conda/deps/usr/bin/jupyter notebook --ip=0.0.0.0 --port=8888 --no-browser /vagrant > /home/vagrant/IJulia.log 2>&1'
+# start jupyter notebook server from julia (this used to work until julia v0.5)
+#ExecStart=/bin/sh -c 'export HOME=/home/vagrant&& julia -e "using IJulia; notebook()" > /home/vagrant/IJulia.log 2>&1'
 
 [Install]
 WantedBy=multi-user.target

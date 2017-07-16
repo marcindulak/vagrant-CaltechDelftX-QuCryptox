@@ -17,12 +17,9 @@ Sample Usage
 
 Install VirtualBox https://www.virtualbox.org/ and Vagrant https://www.vagrantup.com/downloads.html
 
-If you have *git* installed on your host machine (e.g. laptop) clone the repository:
+You need *git* installed on your host machine (e.g. laptop), and clone the repository:
 
         $ git clone https://github.com/marcindulak/vagrant-CaltechDelftX-QuCryptox.git
-
-Otherwise create manually the folder called *vagrant-CaltechDelftX-QuCryptox* and save the
-`https://raw.githubusercontent.com/marcindulak/vagrant-CaltechDelftX-QuCryptox/master/Vagrantfile` file under this folder.
 
 Start the VM guest from the command prompt:
 
@@ -32,7 +29,11 @@ Start the VM guest from the command prompt:
 Jypyter should be available from a web browser on your host under http://localhost:8890
 Accessing Jupyter for the first time requires a token, available from:
 
-	$ vagrant ssh -c "sudo su - -c '/root/.julia/v0.5/Conda/deps/usr/bin/jupyter notebook list'"
+	$ vagrant ssh -c "grep 'at: http://0.0.0.0:8888' /home/vagrant/IJulia.log"
+
+In case the notebook server is started interactively from the command line from the Vagrant guest VM, the token is shown with:
+
+	$ vagrant ssh -c "/home/vagrant/.julia/*/Conda/deps/usr/bin/jupyter notebook list"
 
 If you have ssh access to the VM guest (by default on Linux and MAC) you can verify IJulia is running on the VM guest with:
 
