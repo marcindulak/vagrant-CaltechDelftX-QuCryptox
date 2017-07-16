@@ -28,7 +28,7 @@ SCRIPT
     # jupyter must start on 0.0.0.0
     machine.vm.provision :shell, :inline => "sed -i 's/^127/#127/' /etc/hosts", run: "always"
     machine.vm.provision :shell, :inline => "echo 0.0.0.0 localhost >> /etc/hosts"
-    machine.vm.provision :shell, path: "install.sh", run: "always"
+    machine.vm.provision :shell, path: "install.sh", privileged: false, run: "always"
     machine.vm.provision :shell, path: "service.sh", run: "always"
     machine.vm.provision :shell, :inline => "systemctl enable IJulia", run: "always"
     machine.vm.provision :shell, :inline => "systemctl start IJulia", run: "always"
