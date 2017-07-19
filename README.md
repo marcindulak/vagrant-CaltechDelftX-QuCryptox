@@ -31,6 +31,8 @@ Accessing Jupyter for the first time requires a token, available from:
 
 	$ vagrant ssh -c "grep 'at: http://0.0.0.0:8888' /home/vagrant/IJulia.log"
 
+The token is printed at the end of the `vagrant up` output.
+
 In case the notebook server is started interactively from the command line from the Vagrant guest VM, the token is shown with:
 
 	$ vagrant ssh -c "/home/vagrant/.julia/*/Conda/deps/usr/bin/jupyter notebook list"

@@ -33,6 +33,7 @@ SCRIPT
     machine.vm.provision :shell, :inline => "systemctl enable IJulia", run: "always"
     machine.vm.provision :shell, :inline => "systemctl start IJulia", run: "always"
     machine.vm.provision :shell, :inline => "iptables -I INPUT -m state --state NEW,ESTABLISHED -p tcp --dport 8888 -j ACCEPT", run: "always"
+    machine.vm.provision :shell, :inline => "grep 'at: http://0.0.0.0:8888' /home/vagrant/IJulia.log", run: "always"
   end
 end
 
