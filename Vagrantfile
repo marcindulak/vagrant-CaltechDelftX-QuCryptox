@@ -6,8 +6,8 @@
 
 Vagrant.configure(2) do |config|
   config.vm.define "CaltechDelftX-QuCryptox" do |machine|
-    machine.vm.box = "puppetlabs/centos-7.2-64-nocm"
-    machine.vm.box_url = "puppetlabs/centos-7.2-64-nocm"
+    machine.vm.box = "bento/centos-7.4"
+    machine.vm.box_url = "bento/centos-7.4"
     machine.vm.network :forwarded_port, guest: 8888, host: 8890, id: "jupyter", auto_correct: true
     machine.vm.provider "virtualbox" do |provider|
       provider.memory = 512
